@@ -36,7 +36,7 @@ export default function Home() {
   }, []);
 
   const MintMany = () => {
-    const [mintCount, setMintCount] = useState(5);
+    const [mintCount, setMintCount] = useState(2);
 
     return (
       <>
@@ -53,11 +53,11 @@ export default function Home() {
           type="number"
           min={2}
           max={10}
-          className="px-2 mx-auto mt-5 font-bold text-white bg-gray-500"
+          className="mb-3 mt-5 px-4 py-2 font-bold text-white transition-opacity rounded-lg hover:opacity-70 bg-gradient-to-br from-green-50 via-blue-560 to-purple-700"
           value={mintCount}
           onChange={(e) => setMintCount((e.target as any).value)}
         />
-        <p className="mx-auto mt-2">min 2; max 10;</p>
+        <p className="mx-auto mt-2 bg-clip-text text-white">max 4;</p>
       </>
     );
   };
@@ -67,30 +67,27 @@ export default function Home() {
       <Head>
         <title>next-candy-machine</title>
         <meta
-          name="description"
-          content="Simplified NextJs with typescript example app integrated with Metaplex's Candy Machine"
+          name="The Hypno Wolf"
+          content="The Transmission Portal... Smells like K9."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="flex flex-col items-center min-h-screen mx-6">
+      <div className="flex flex-col items-center min-h-screen mx-3 bg-clip-text">
         <Toaster />
-        <div className="flex items-center justify-between w-full mt-3">
-          <h1 className="text-2xl font-bold">next-candy-machine</h1>
-          <div className="flex items-center">
+        <div className="flex items-center justify-between w-full mt-3 background bg-clip-text">
+          <h1 className="text-2xl font-bold bg-clip-text"> </h1>
+          
+          <div className="flex items-center bg-clip-text">
             {connected && (
-              <div className="flex items-end mr-2">
-                <p className="text-xs text-gray-400">balance</p>
-                <p className="mx-1 font-bold leading-none">
+              <div className="flex items-end mr-2 bg-clip-text">
+                <p className="text-xs text-gray-400 bg-clip-text">balance</p>
+                <p className="mx-1 font-bold leading-none bg-clip-text text-white ">
                   {balance.toFixed(2)}
                 </p>
                 <p
-                  className="font-bold leading-none text-transparent bg-clip-text"
-                  style={{
-                    backgroundImage: `linear-gradient(to bottom right, #00FFA3, #03E1FF, #DC1FFF)`,
-                  }}
+                  className="leading-none text-transparent bg-clip-text"
                 >
-                  SOL
                 </p>
               </div>
             )}
@@ -98,13 +95,13 @@ export default function Home() {
           </div>
         </div>
         {connected && (
-          <p className="mr-auto text-sm">
-            <span className="font-bold">Available/Minted/Total:</span>{" "}
+          <p className="mb-3 mt-16 text-sm bg-clip-text text-white">
+            <span className="mb-3 ext-3xl font-white background bg-clip-text text-white">Transmittable/Transmitted/Total:</span>{" "}
             {nftsData.itemsRemaining}/{nftsData.itemsRedeemed}/
             {nftsData.itemsAvailable}
           </p>
         )}
-        <div className="flex items-start justify-center w-11/12 my-10">
+        <div className="flex items-start justify-center w-13/17 my-10 background transparent text-white ">
           {connected ? (
             <>
               {new Date(mintStartDate).getTime() < Date.now() ? (
@@ -114,7 +111,7 @@ export default function Home() {
                   ) : (
                     <>
                       <div className="flex flex-col w-1/2">
-                        <h1 className="mb-10 text-3xl font-bold">Mint One</h1>
+                        <h1 className="mb-5 ext-3xl font-bold text-white">  </h1>
                         <button
                           onClick={startMint}
                           disabled={isMinting}
@@ -124,7 +121,7 @@ export default function Home() {
                         </button>
                       </div>
                       <div className="flex flex-col w-1/2">
-                        <h1 className="mb-10 text-3xl font-bold">Mint Many</h1>
+                        <h1 className="mb-5 ext-3xl font-bold text-white background transparent">  </h1>
                         <MintMany />
                       </div>
                     </>
@@ -139,16 +136,8 @@ export default function Home() {
               )}
             </>
           ) : (
-            <p>connect wallet to mint</p>
+            <p></p>
           )}
-        </div>
-        <div className="flex flex-col w-full">
-          <h2 className="text-2xl font-bold">My NFTs</h2>
-          <div className="flex mt-3 gap-x-2">
-            {(nfts as any).map((nft: any, i: number) => {
-              return <AnNFT key={i} nft={nft} />;
-            })}
-          </div>
         </div>
       </div>
     </>
