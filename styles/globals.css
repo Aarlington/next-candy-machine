@@ -3,6 +3,15 @@
 @tailwind utilities;
 
 html,
+
+p {
+  background-image: url("C:/Users/Jenks/Desktop/cavity-creator/next-candy-machine/asset-folder/tzone.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; /* Resize the background image to cover the entire container */
+
+}
+
 body {
   padding: 0;
   margin: 0;
