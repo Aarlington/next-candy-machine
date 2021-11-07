@@ -1,7 +1,12 @@
 .container {
   min-height: 100vh;
   padding: 0 0.5rem;
-  display: flex;
+  /* background-image: url('C:/Users/Jenks/Desktop/cavity-creator/next-candy-machine/asset-folder/tzone1.png'); */
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-size: cover; /* Resize the background image to cover the entire container */
+
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
