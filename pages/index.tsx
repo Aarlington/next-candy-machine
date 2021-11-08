@@ -65,7 +65,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>next-candy-machine</title>
+        <title>Wolf Transmission Page</title>
         <meta
           name="The Hypno Wolf"
           content="The Transmission Portal... Smells like K9."
